@@ -1,0 +1,53 @@
+{
+  "name": "babel-plugin-add-imports",
+  "version": "1.0.0",
+  "description": "Add imports to the top of files.",
+  "keywords": [
+    "babel",
+    "plugin",
+    "babel-plugin",
+    "import",
+    "require",
+    "add import",
+    "add require"
+  ],
+  "license": "ISC",
+  "author": "Chris Blossom",
+  "repository": "chrisblossom/babel-plugin-add-imports",
+  "homepage": "https://github.com/chrisblossom/babel-plugin-add-imports",
+  "main": "build/babel-plugin-add-imports.js",
+  "scripts": {
+    "clean": "del ./build/*",
+    "lint": "eslint --ext .js .",
+    "lint.fix": "eslint --fix --ext .js .",
+    "format": "prettier **/*.{js,md,json} --write",
+    "test": "jest",
+    "build": "NODE_ENV=production babel src -d build --ignore test.js,__sandbox__/ --source-maps",
+    "dev": "NODE_ENV=development babel -w src/ -d build/ --ignore test.js,__sandbox__/ --source-maps"
+  },
+  "lint-staged": {
+    "*.{js,md,json}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@chrisblossom/eslint-config": "^1.0.1",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-tester": "^5.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "del-cli": "^1.1.0",
+    "eslint": "^4.17.0",
+    "husky": "^0.14.3",
+    "jest": "^22.3.0",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2"
+  },
+  "dependencies": {
+    "lodash.ismatch": "^4.4.0",
+    "lodash.isplainobject": "^4.0.6"
+  }
+}
