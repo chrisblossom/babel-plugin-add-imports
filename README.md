@@ -9,7 +9,7 @@ Add imports to the top of files.
 
 ## Installation
 
-`npm install --save babel-plugin-add-imports`
+`npm install --save-dev babel-plugin-add-imports`
 
 ## Usage
 
