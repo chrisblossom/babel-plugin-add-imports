@@ -12,18 +12,34 @@
     "add require"
   ],
   "license": "ISC",
-  "author": "Chris Blossom",
   "repository": "chrisblossom/babel-plugin-add-imports",
   "homepage": "https://github.com/chrisblossom/babel-plugin-add-imports",
-  "main": "build/babel-plugin-add-imports.js",
+  "author": "Chris Blossom",
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.10",
+    "yarn": ">=1.6.0"
+  },
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/babel-plugin-add-imports.js",
   "scripts": {
-    "clean": "del ./build/*",
-    "lint": "eslint --ext .js .",
-    "lint.fix": "eslint --fix --ext .js .",
-    "format": "prettier **/*.{js,md,json} --write",
-    "test": "jest",
-    "build": "NODE_ENV=production babel src -d build --ignore test.js,__sandbox__/ --source-maps",
-    "dev": "NODE_ENV=development babel -w src/ -d build/ --ignore test.js,__sandbox__/ --source-maps"
+    "build": "backtrack build --production",
+    "check-all": "backtrack check-all",
+    "clean": "backtrack clean",
+    "dev": "backtrack dev --development",
+    "format": "backtrack format",
+    "lint": "backtrack lint",
+    "lint.fix": "backtrack lint.fix",
+    "precommit": "backtrack precommit",
+    "prepublishOnly": "backtrack prepublishOnly",
+    "prepush": "backtrack prepush",
+    "test": "backtrack test",
+    "test.ci": "backtrack test.ci",
+    "test.ci-pretest": "backtrack test.ci-pretest",
+    "test.update": "jest --updateSnapshot",
+    "test.watch": "jest --watch"
   },
   "lint-staged": {
     "*.{js,md,json}": [
@@ -31,20 +47,15 @@
       "git add"
     ]
   },
+  "babel": {
+    "presets": [
+      "./.babelrc.js"
+    ]
+  },
   "devDependencies": {
-    "@chrisblossom/eslint-config": "^1.0.1",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-dynamic-import-node": "^1.2.0",
-    "babel-plugin-tester": "^5.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "del-cli": "^1.1.0",
-    "eslint": "^4.17.0",
-    "husky": "^0.14.3",
-    "jest": "^22.3.0",
-    "lint-staged": "^6.1.0",
-    "prettier": "^1.10.2"
+    "@backtrack/core": "^0.1.18",
+    "@backtrack/preset-node-module": "^0.2.0",
+    "babel-plugin-tester": "^5.4.0"
   },
   "dependencies": {
     "lodash.ismatch": "^4.4.0",

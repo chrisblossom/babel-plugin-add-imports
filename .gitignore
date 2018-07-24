@@ -1,4 +1,4 @@
-# This file is managed by sanejs
+# This file is managed by backtrack
 #
 # DO NOT MODIFY
 
@@ -6,12 +6,16 @@
 /coverage
 .DS_Store
 node_modules
-!**/__sandbox__/**/node_modules
 *.swp
 *.log
 .env
 build
+dist
 *.ignore
 .idea
 .vscode
 .cache
+package-lock.json
+yarn.lock
+!**/__sandbox__/**/*
+**/__sandbox__/**/.DS_Store
