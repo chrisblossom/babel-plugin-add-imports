@@ -11,7 +11,7 @@
     "add import",
     "add require"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "repository": "chrisblossom/babel-plugin-add-imports",
   "homepage": "https://github.com/chrisblossom/babel-plugin-add-imports",
   "author": "Chris Blossom",
